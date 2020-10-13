@@ -1,9 +1,10 @@
 name:                fakedata-quickcheck
-version:             0.8.0
+version:             0.1.0
 license:             MIT
 author:              "Jappie Klooster"
 maintainer:          "jappieklooster@hotmail.com"
 copyright:           "2020 Jappie Klooster"
+github:              "fakedata-haskell/fakedata-quickcheck"
 
 extra-source-files:
 - Readme.md
