@@ -5,6 +5,9 @@ author:              "Jappie Klooster"
 maintainer:          "jappieklooster@hotmail.com"
 copyright:           "2020 Jappie Klooster"
 github:              "fakedata-haskell/fakedata-quickcheck"
+synopsis:            Fake a -> Gen a
+description:         Use fakedata Fake monad for quicheck tests.
+                     See readme for examples at <https://github.com/fakedata-haskell/fakedata-quickcheck>.
 
 extra-source-files:
 - Readme.md
