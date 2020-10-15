@@ -6,6 +6,8 @@ cabal-version: 1.12
 
 name:           fakedata-quickcheck
 version:        0.1.0
+synopsis:       Fake a -> Gen a
+description:    Use fakedata Fake monad for quicheck tests. See readme for examples at <https://github.com/fakedata-haskell/fakedata-quickcheck>.
 homepage:       https://github.com/fakedata-haskell/fakedata-quickcheck#readme
 bug-reports:    https://github.com/fakedata-haskell/fakedata-quickcheck/issues
 author:         Jappie Klooster
