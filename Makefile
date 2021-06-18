@@ -20,6 +20,21 @@ shell:
 test:
 	stack --nix test
 
+## Test for lts18
+test-lts18:
+	make shell-lts18
+	stack --nix test --resolver lts-18.0
+
+## Test for lts16
+test-lts18:
+	make shell-lts16
+	stack --nix test --resolver lts-16.31
+
+## Test for lts14
+test-lts18:
+	make shell-lts14
+	stack --nix test --resolver lts-14.27
+
 ## Show help screen.
 help:
 	@echo "Please use \`make <target>' where <target> is one of\n"
