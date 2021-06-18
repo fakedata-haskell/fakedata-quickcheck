@@ -5,6 +5,11 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        resolver: [lts18, lts16, lts14]
     steps:
     - uses: actions/checkout@v2.3.1
     - uses: cachix/install-nix-action@v13
@@ -18,5 +23,5 @@ jobs:
         set -ex
         export NIX_PATH="nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/tags/21.05.tar.gz"
         nix --version
-        make shell-lts18
+        make shell-${{ matrix.resolver }}
         stack --nix test
