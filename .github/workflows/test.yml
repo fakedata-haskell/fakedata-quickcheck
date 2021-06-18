@@ -12,6 +12,15 @@ jobs:
         resolver: [lts18, lts16, lts14]
     steps:
     - uses: actions/checkout@v2.3.1
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.stack
+          ${{ github.workspace }}/.stack
+        key: ${{ runner.os }}-${{ matrix.resolver }}-haskell-${{ hashFiles('stack.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.resolver }}-haskell-
     - uses: cachix/install-nix-action@v13
     - uses: cachix/cachix-action@v10
       with:
