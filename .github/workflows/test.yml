@@ -15,10 +15,9 @@ jobs:
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: nix-shell --run "echo OK"
-    - run:
-        name: tests
-        shell: bash
-        run: |
-          set -ex
-          nix --version
-          make shell-lts18
+    - name: tests
+      shell: bash
+      run: |
+        set -ex
+        nix --version
+        make shell-lts18
