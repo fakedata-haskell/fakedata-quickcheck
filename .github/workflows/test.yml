@@ -7,14 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.1
-    - uses: cachix/install-nix-action@v11
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
+    - uses: cachix/install-nix-action@v13
     - uses: cachix/cachix-action@v10
       with:
         name: jappie
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix-build nix/ci.nix
     - run: nix-shell --run "echo OK"
+    - run:
+        name: tests
+        shell: bash
+        run: |
+          set -ex
+          nix --version
+          make shell-lts18
