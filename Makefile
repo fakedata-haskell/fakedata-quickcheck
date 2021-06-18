@@ -26,12 +26,12 @@ test-lts18:
 	stack --nix test --resolver lts-18.0
 
 ## Test for lts16
-test-lts18:
+test-lts16:
 	make shell-lts16
 	stack --nix test --resolver lts-16.31
 
 ## Test for lts14
-test-lts18:
+test-lts14:
 	make shell-lts14
 	stack --nix test --resolver lts-14.27
 
