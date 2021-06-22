@@ -1,13 +1,11 @@
 # Change log for fakedata-quickcheck
 
-## Version 1.0
+## Version 0.2.0
 
 - Relax bounds
 - Add CI setup for stackage resolvers.
 
-## Version 0.8.0
-
-Start versioning in lockstep with fakedata.
+## Version 0.1.0
 
 + Add github actions nix build
 + Copy over function from fakedata tests.
