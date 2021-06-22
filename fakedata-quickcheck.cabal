@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.2.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 
@@ -8,6 +8,7 @@ name:           fakedata-quickcheck
 version:        0.1.0
 synopsis:       Fake a -> Gen a
 description:    Use fakedata Fake monad for quicheck tests. See readme for examples at <https://github.com/fakedata-haskell/fakedata-quickcheck>.
+category:       Random, Fake, FakeData
 homepage:       https://github.com/fakedata-haskell/fakedata-quickcheck#readme
 bug-reports:    https://github.com/fakedata-haskell/fakedata-quickcheck/issues
 author:         Jappie Klooster
@@ -31,13 +32,32 @@ library
       Paths_fakedata_quickcheck
   hs-source-dirs:
       src
-  default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications
+  default-extensions:
+      EmptyCase
+      FlexibleContexts
+      FlexibleInstances
+      InstanceSigs
+      MultiParamTypeClasses
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      TupleSections
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
+      StandaloneDeriving
+      OverloadedStrings
+      TypeApplications
   ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities
   build-depends:
       QuickCheck >=2.6 && <2.15
     , base >=4.7 && <5
-    , fakedata >=0.6.0 && <0.9.0
-    , random >=1 && <1.2.0
+    , fakedata
+    , random
   default-language: Haskell2010
 
 test-suite unit
@@ -48,16 +68,35 @@ test-suite unit
       Paths_fakedata_quickcheck
   hs-source-dirs:
       test
-  default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications
+  default-extensions:
+      EmptyCase
+      FlexibleContexts
+      FlexibleInstances
+      InstanceSigs
+      MultiParamTypeClasses
+      LambdaCase
+      MultiWayIf
+      NamedFieldPuns
+      TupleSections
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      GeneralizedNewtypeDeriving
+      StandaloneDeriving
+      OverloadedStrings
+      TypeApplications
   ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities
   build-depends:
       QuickCheck >=2.6 && <2.15
     , base >=4.7 && <5
-    , fakedata >=0.6.0 && <0.9.0
+    , fakedata
     , fakedata-quickcheck
     , hspec
     , hspec-core
-    , random >=1 && <1.2.0
+    , random
     , regex-tdfa
     , text
   default-language: Haskell2010
