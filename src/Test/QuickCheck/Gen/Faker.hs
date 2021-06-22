@@ -12,15 +12,20 @@ import qualified Test.QuickCheck  as Q
 fakeQuickcheck :: Fake a -> Q.Gen a
 fakeQuickcheck = fakeQuickcheck' defaultFakerSettings
 
--- | copied from https://github.com/parsonsmatt/hedgehog-fakedata/blob/d342c6eb5aeb9990bb36ede1d1f08becc7d71e16/src/Hedgehog/Gen/Faker.hs
--- Works in Quickcheck gen instead of hedgehog
+-- | Select a value 'Fake' program in 'Gen'.
 --
--- Select a value 'Fake' program in 'Gen'.
+-- Example property to check that names aren't empty:
 --
--- Note that the implementation relies on 'unsafePerformIO'.
--- The faker library uses IO internally for looking up data files.
--- but 'liftIO' in the 'Fake' monad is a gateway to arbitrary side effects.
--- This library doesn't solve that.
+-- @
+-- λ> import Faker.Name (name)
+-- λ> import Test.QuickCheck.Gen.Faker
+-- λ> import qualified Test.QuickCheck as Q
+-- λ> import qualified Data.Text as T
+-- λ> Q.quickCheck (Q.forAll (fakeQuickcheck name) (not . T.null))
+-- +++ OK, passed 100 tests.
+--
+-- @
+
 fakeQuickcheck' :: FakerSettings -> Fake a -> Q.Gen a
 fakeQuickcheck' fakerSettings f = do
     randomGen <- mkStdGen <$> Q.choose (minBound, maxBound)
